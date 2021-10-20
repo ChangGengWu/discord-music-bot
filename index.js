@@ -1,6 +1,7 @@
 const { Client, Intents } = require("discord.js");
 const { token } = require("./config.json");
 const { Player } = require("discord-music-player");
+require("dotenv").config();
 
 const client = new Client({
   intents: [
@@ -134,4 +135,4 @@ client.on("messageCreate", async (message) => {
     console.log(ProgressBar.prettier);
   }
 });
-client.login(token);
+client.login(process.env.BOT_TOKEN);

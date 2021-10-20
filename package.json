@@ -1,13 +1,31 @@
 {
+  "name": "musicbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
     "@discordjs/builders": "^0.7.0",
     "@discordjs/opus": "^0.6.0",
     "@discordjs/rest": "^0.1.0-canary.0",
     "discord-api-types": "^0.24.0",
     "discord-music-player": "^8.2.0",
-    "discord.js": "^13.2.0"
+    "discord.js": "^13.2.0",
+    "dotenv": "^10.0.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
-  }
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChangGengWu/discord-music-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChangGengWu/discord-music-bot/issues"
+  },
+  "homepage": "https://github.com/ChangGengWu/discord-music-bot#readme"
 }

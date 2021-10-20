@@ -2,6 +2,9 @@
   "name": "musicbot",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "16.11.1"
+  },
   "main": "index.js",
   "dependencies": {
     "@discordjs/builders": "^0.7.0",

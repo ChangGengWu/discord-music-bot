@@ -24,7 +24,16 @@ const commands = [
 
 const rest = new REST({ version: "9" }).setToken(process.env.BOT_TOKEN);
 
-rest
-  .put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands })
-  .then(() => console.log("Successfully registered application commands."))
-  .catch(console.error);
+(async () => {
+  try {
+    console.log("Started refreshing application (/) commands.");
+
+    await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
+      body: commands,
+    });
+
+    console.log("Successfully reloaded application (/) commands.");
+  } catch (error) {
+    console.error(error);
+  }
+})();

@@ -22,7 +22,7 @@ const commands = [
     .setDescription("Replies with user who are handsome!"),
 ].map((command) => command.toJSON());
 
-const rest = new REST({ version: "9" }).setToken(token);
+const rest = new REST({ version: "9" }).setToken(process.env.BOT_TOKEN);
 
 rest
   .put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands })

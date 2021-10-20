@@ -1,5 +1,5 @@
 const { Client, Intents } = require("discord.js");
-const { token } = require("./config.json");
+// const { token } = require("./config.json");
 const { Player } = require("discord-music-player");
 require("dotenv").config();
 

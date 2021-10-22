@@ -41,7 +41,6 @@ const player = new Player(client, {
   leaveOnEmpty: false, // This options are optional.
 });
 client.player = player;
-
 client.on("messageCreate", async (message) => {
   const args = message.content
     .slice(settings.prefix.length)
@@ -56,7 +55,11 @@ client.on("messageCreate", async (message) => {
     let queue = client.player.createQueue(message.guild.id);
     await queue.join(message.member.voice.channel);
     let song = await queue.play(args.join(" ")).catch((_) => {
-      if (!guildQueue) queue.stop();
+      if (!guildQueue) {
+        setTimeout(() => {
+          if (!guildQueue) queue.stop();
+        }, 300000);
+      }
     });
   }
 
@@ -67,7 +70,6 @@ client.on("messageCreate", async (message) => {
       if (!guildQueue) queue.stop();
     });
   }
-
   if (command === "skip") {
     guildQueue.skip();
   }
